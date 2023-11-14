@@ -1,0 +1,130 @@
+*, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica;
+    min-height: 100vh;
+    background: linear-gradient(to left bottom, rgb(94, 116, 55), rgb(231, 200, 151));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 35px;
+}
+.wrapper {
+    width: 750px;
+    max-width: 100%;
+    padding: 15px 0;
+    position: relative;
+}
+.wrapper i {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.wrapper #left {
+    left: 0;
+}
+.wrapper #right {
+    right: 0;
+}
+.carousel {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+.carousel.dragging {
+    cursor: grab;
+    /* scroll-behavior: auto; */
+}
+.card {
+    width: calc(100% / 5);
+    height: 220px;
+    background-color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    scroll-behavior: smooth;
+}
+.carousel.dragging .card {
+    user-select: none;
+}
+@media (max-width: 900px) {
+    .card {
+        width: calc(100% / 4);
+    }
+}
+@media (max-width: 768px) {
+    .card {
+        width: calc(100% / 3);
+    }
+}
+@media (max-width: 500px) {
+    .card {
+        width: 100%;
+    }
+}
+.card img:first-of-type {
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    height: 70%;
+}
+.card .details img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.card .details {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+.details .info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.info span:first-child {
+    font-weight: 700;
+    font-size: 1rem;
+}
+.info span:last-child {
+   color: #777;
+}
+.spans {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.spans .cercle {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.spans .cercle.active {
+    background-color: blueviolet;
+}
